@@ -1,6 +1,7 @@
 import 'package:academyathlon/data/GeneralFields.dart';
 import 'package:academyathlon/data/enum/ELikerType.dart';
 
+/// @authors MrBigBear
 class PostLiker extends GeneralFields {
   int? _id;
   int? _userId;

@@ -1,5 +1,6 @@
 import 'package:academyathlon/data/enum/ESubjectType.dart';
 
+/// @authors MrBigBear
 extension ExSubjectType on ESubjectType{
 
   String get stringDefination {

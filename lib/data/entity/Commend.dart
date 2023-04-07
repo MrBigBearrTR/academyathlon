@@ -1,7 +1,7 @@
 import 'package:academyathlon/data/GeneralFields.dart';
 
+/// @authors MrBigBear
 class Commend extends GeneralFields {
-
   int? _id;
   int? _userId;
   int? _postId;

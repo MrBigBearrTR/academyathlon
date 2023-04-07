@@ -1,6 +1,7 @@
 
 import 'package:academyathlon/data/enum/ELinksType.dart';
 
+/// @authors MrBigBear
 extension ExLinksType on ELinksType {
 
   String get stringDefination {

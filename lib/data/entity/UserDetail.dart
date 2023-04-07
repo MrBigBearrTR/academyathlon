@@ -2,6 +2,7 @@ import 'dart:typed_data';
 
 import 'package:academyathlon/data/GeneralFields.dart';
 
+/// @authors MrBigBear
 class UserDetail extends GeneralFields {
   int? _id;
   int? _userId;
