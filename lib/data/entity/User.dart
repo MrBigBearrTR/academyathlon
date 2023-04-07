@@ -1,5 +1,6 @@
 import 'package:academyathlon/data/GeneralFields.dart';
 
+/// @authors MrBigBear
 class User extends GeneralFields {
   int? _id;
   String? _username;

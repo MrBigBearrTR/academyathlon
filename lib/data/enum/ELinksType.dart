@@ -1,3 +1,4 @@
+/// @authors MrBigBear
 enum ELinksType{
   LINKEDLN,
   INSTAGRAM,

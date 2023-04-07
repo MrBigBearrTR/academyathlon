@@ -1,6 +1,7 @@
 import 'package:academyathlon/data/GeneralFields.dart';
 import 'package:academyathlon/data/enum/ESubjectType.dart';
 
+/// @authors MrBigBear
 class Subject extends GeneralFields {
   int? _id;
   String? _name;

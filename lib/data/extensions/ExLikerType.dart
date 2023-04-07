@@ -1,6 +1,7 @@
 
 import 'package:academyathlon/data/enum/ELikerType.dart';
 
+/// @authors MrBigBear
 extension ExLikerType on ELikerType{
 
   String get stringDefination {
