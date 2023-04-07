@@ -1,5 +1,5 @@
 /// @authors MrBigBear
 enum ELikerType{
-  LIKE,
-  SAVE;
+  like,
+  save;
 }

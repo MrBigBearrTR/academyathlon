@@ -8,32 +8,32 @@ class UserLinks extends GeneralFields {
   ELinksType? _eLinksType;
   String? _link;
 
-  int getId() {
-    return _id!;
+  int? getId() {
+    return _id;
   }
 
   void setId(int id) {
     this._id = id;
   }
 
-  int getUserDetailId() {
-    return _userDetailId!;
+  int? getUserDetailId() {
+    return _userDetailId;
   }
 
   void setUserDetailId(int userDetailId) {
     this._userDetailId = userDetailId;
   }
 
-  ELinksType getELinksType() {
-    return _eLinksType!;
+  ELinksType? getELinksType() {
+    return _eLinksType;
   }
 
   void setELinksType(ELinksType eLinksType) {
     this._eLinksType = eLinksType;
   }
 
-  String getLink() {
-    return _link!;
+  String? getLink() {
+    return _link;
   }
 
   void setLink(String link) {

@@ -13,64 +13,64 @@ class Post extends GeneralFields {
   String? _context;
   bool? _isPinned;
 
-  int getId() {
-    return _id!;
+  int? getId() {
+    return _id;
   }
 
   void setId(int id) {
     this._id = id;
   }
 
-  int getUserId() {
-    return _userId!;
+  int? getUserId() {
+    return _userId;
   }
 
   void setUserId(int userId) {
     this._userId = userId;
   }
 
-  int getSubjectId() {
-    return _subjectId!;
+  int? getSubjectId() {
+    return _subjectId;
   }
 
   void setSubjectId(int subjectId) {
     this._subjectId = subjectId;
   }
 
-  String getTitle() {
-    return _title!;
+  String? getTitle() {
+    return _title;
   }
 
   void setTitle(String _title) {
     this._title = _title;
   }
 
-  String getDescreption() {
-    return _descreption!;
+  String? getDescreption() {
+    return _descreption;
   }
 
   void setDescreption(String descreption) {
     this._descreption = descreption;
   }
 
-  ByteData getPhoto() {
-    return _photo!;
+  ByteData? getPhoto() {
+    return _photo;
   }
 
   void setPhoto(ByteData photo) {
     this._photo = photo;
   }
 
-  String geContext() {
-    return _context!;
+  String? geContext() {
+    return _context;
   }
 
   void setContext(String context) {
     this._context = context;
   }
 
-  bool isPinned() {
-    return _isPinned!;
+  bool? isPinned() {
+    return _isPinned;
   }
 
   void setIsPinned(bool isPinned) {
