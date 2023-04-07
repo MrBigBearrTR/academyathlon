@@ -1,0 +1,4 @@
+enum ELikerType{
+  LIKE,
+  SAVE;
+}

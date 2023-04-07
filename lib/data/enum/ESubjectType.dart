@@ -1,0 +1,5 @@
+enum ESubjectType{
+  TITLE,
+  SUBJECT;
+
+}
