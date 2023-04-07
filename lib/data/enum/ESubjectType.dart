@@ -1,6 +1,6 @@
 /// @authors MrBigBear
 enum ESubjectType{
-  TITLE,
-  SUBJECT;
+  title,
+  subject;
 
 }

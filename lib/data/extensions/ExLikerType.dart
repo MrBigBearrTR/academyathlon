@@ -8,10 +8,10 @@ extension ExLikerType on ELikerType{
 
     switch (this) {
 
-      case ELikerType.LIKE:
+      case ELikerType.like:
         return "Beğen";
 
-      case ELikerType.SAVE:
+      case ELikerType.save:
         return "Kaydet";
     }
   }
