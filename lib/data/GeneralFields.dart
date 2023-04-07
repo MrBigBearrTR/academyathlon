@@ -1,3 +1,4 @@
+/// @authors MrBigBear
 class GeneralFields {
 
   bool? _isActive;

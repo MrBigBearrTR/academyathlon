@@ -1,6 +1,7 @@
 import 'package:academyathlon/data/GeneralFields.dart';
 import 'package:academyathlon/data/enum/ELinksType.dart';
 
+/// @authors MrBigBear
 class UserLinks extends GeneralFields {
   int? _id;
   int? _userDetailId;
