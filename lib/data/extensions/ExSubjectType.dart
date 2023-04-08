@@ -7,10 +7,10 @@ extension ExSubjectType on ESubjectType{
 
     switch (this) {
 
-      case ESubjectType.SUBJECT:
+      case ESubjectType.subject:
         return "Konu";
 
-      case ESubjectType.TITLE:
+      case ESubjectType.title:
         return "Başlık";
     }
   }

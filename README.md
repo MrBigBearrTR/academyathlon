@@ -2,6 +2,13 @@
 
 Assignment platform for academic development
 
+Branch akış şekli;
+
+Pull request ile soldan sağa doğru merge'lenerek işlem çalışan hali ile live branchinden master a aktarılır.
+
+Bireysel Branchiniz >> test >> live >> master
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
