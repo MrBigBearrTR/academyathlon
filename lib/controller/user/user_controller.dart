@@ -4,17 +4,18 @@ class UserController {
   static User user = User();
 
   UserController() {
+    user.setId(1);
     user.setUsername('bursiyer');
     user.setPassword('123456');
   }
 
   //UserController().isUserSaved("username", "password");
-  bool isUserSaved(String username, String password) {
+  User? login(String username, String password) {
 
     if (username == user.getUsername() && password == user.getPassword()) {
-      return true;
+      return user;
     } else {
-      return false;
+      return null;
     }
   }
 }
