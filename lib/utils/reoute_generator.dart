@@ -1,9 +1,11 @@
 import 'package:academyathlon/pages/login/login_page.dart';
-import 'package:academyathlon/pages/main/main_page.dart';
+import 'package:academyathlon/pages/main/sidebar.dart';
 import 'package:academyathlon/utils/error_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+
+import '../pages/main/main_page.dart';
 
 class RouteGenerator {
   static Route<dynamic>? _createRoute(
@@ -30,6 +32,8 @@ class RouteGenerator {
     switch (settings.name) {
       case '/main':
         return _createRoute(MainPage(), settings);
+      case '/sidebar':
+        return _createRoute(const Sidebar(), settings);
       case '/':
         return _createRoute(const Login(), settings);
       default:

@@ -5,8 +5,8 @@ class UserController {
 
   UserController() {
     user.setId(1);
-    user.setUsername('bursiyer');
-    user.setPassword('123456');
+    user.setUsername('1');
+    user.setPassword('1');
   }
 
   //UserController().isUserSaved("username", "password");
