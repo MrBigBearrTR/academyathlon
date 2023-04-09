@@ -1,7 +1,10 @@
 import 'package:academyathlon/controller/user/user_controller.dart';
+import 'package:academyathlon/utils/general_background.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
+import 'package:academyathlon/utils/theme_color_constant.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -35,10 +38,11 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
-          decoration: const BoxDecoration(color: Colors.white70),
+          decoration: GeneralBackground().getLoginBackground(),
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -51,60 +55,62 @@ class _LoginState extends State<Login> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(110),
                     border: Border.all(
-                      color: Colors.black54,
+                      color: ThemeColorConstant.purple2,
                       width: 1.5,
                     ),
                   ),
                   child: Container(
                     decoration: BoxDecoration(
                       // resmin arka rengi
-                      color: Colors.white,
+                      //color: Colors.white,
                       borderRadius: BorderRadius.circular(110),
-                      border: Border.all(color: Colors.black54, width: 1),
+                      border: Border.all(color: ThemeColorConstant.purple, width: 1),
                     ),
                     child: const Image(
-                      image: AssetImage("assets/images/akIcon.png"),
+                      image:
+                          AssetImage("assets/images/academyathlonIconGray.png"),
                     ),
                   ),
                 ),
                 Container(
                   margin: const EdgeInsets.only(top: 30),
                   child: GradientText(
-                    "MERHABA",
-                    style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 30),
+                    "Akademyathlon",
+                    style: GoogleFonts.aBeeZee(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 30,
+                    ),
                     colors: const [
-                      Colors.blue,
-                      Colors.green,
-                      Colors.yellow,
-                      Colors.red
+                      ThemeColorConstant.white,
+                      ThemeColorConstant.white
                     ],
                   ),
                 ),
                 Container(
                   decoration: BoxDecoration(
-                    color: Colors.black12,
-                    borderRadius: BorderRadius.circular(20),
+                    color: ThemeColorConstant.blueOp30,
+                    borderRadius: BorderRadius.circular(50),
                   ),
-                  margin:
-                      const EdgeInsets.only(bottom: 20, top: 30, left: 20, right: 20),
-                  padding:
-                      const EdgeInsets.only(left: 20, right: 20, top: 5, bottom: 10),
+                  margin: const EdgeInsets.only(
+                      bottom: 20, top: 30, left: 20, right: 20),
+                  padding: const EdgeInsets.only(
+                      left: 20, right: 20, top: 5, bottom: 10),
                   child: TextFormField(
                       controller: _emailController,
                       decoration: const InputDecoration(
                           labelText: "Email",
                           border: InputBorder.none,
                           prefixIcon: Icon(Icons.email)),
-                      style: const TextStyle(color: Colors.black)),
+                      style: const TextStyle(color: ThemeColorConstant.white)),
                 ),
                 Container(
                   decoration: BoxDecoration(
-                    color: Colors.black12,
-                    borderRadius: BorderRadius.circular(20),
+                    color: ThemeColorConstant.blueOp30,
+                    borderRadius: BorderRadius.circular(50),
                   ),
                   margin: const EdgeInsets.all(20),
-                  padding:
-                      const EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 5),
+                  padding: const EdgeInsets.only(
+                      left: 20, right: 20, top: 10, bottom: 5),
                   child: TextFormField(
                       //şifre
 
@@ -114,7 +120,7 @@ class _LoginState extends State<Login> {
                           labelText: "Şifre",
                           border: InputBorder.none,
                           prefixIcon: Icon(Icons.key_outlined)),
-                      style: const TextStyle(color: Colors.black)),
+                      style: const TextStyle(color: ThemeColorConstant.white)),
                 ),
                 InkWell(
                   onTap: _handleLogin,
@@ -127,8 +133,8 @@ class _LoginState extends State<Login> {
                     padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       gradient: const LinearGradient(colors: [
-                        Colors.black12,
-                        Colors.black26,
+                        ThemeColorConstant.purple,
+                        ThemeColorConstant.purple2,
                       ], begin: Alignment.topRight, end: Alignment.bottomLeft),
                       borderRadius: BorderRadius.circular(20),
                     ),
@@ -137,7 +143,7 @@ class _LoginState extends State<Login> {
                       child: Text(
                         "GİRİŞ",
                         style: TextStyle(
-                          color: Colors.black54,
+                          color: ThemeColorConstant.white,
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
                         ),
