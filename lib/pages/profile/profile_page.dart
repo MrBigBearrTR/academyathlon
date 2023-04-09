@@ -183,7 +183,7 @@ class ProfilePage extends StatelessWidget {
                     leading: const Icon(Icons.gpp_good_rounded),
                     title: const Text('Derecelerim'),
                     subtitle: Text(
-                        'Puanım:${PostLinkerController().getGeneralLikeCountByUserId(userDetail.getUserId() ?? 0)}'),
+                        'Puanım:${PostLikerController().getGeneralLikeCountByUserId(userDetail.getUserId() ?? 0)}'),
                   ),
                 ],
               ),

@@ -1,4 +1,5 @@
 import 'package:academyathlon/pages/login/login_page.dart';
+import 'package:academyathlon/pages/post/post_page.dart';
 import 'package:academyathlon/pages/profile/profile_page.dart';
 import 'package:academyathlon/pages/subjects/subject_list_page.dart';
 import 'package:academyathlon/utils/error_page.dart';
@@ -37,6 +38,8 @@ class RouteGenerator {
         return _createRoute(const SubjectList(), settings);
       case '/profile':
         return _createRoute(const ProfilePage(), settings);
+      case '/post':
+        return _createRoute(const PostPage(), settings);
       case '/':
         return _createRoute(const Login(), settings);
       default:

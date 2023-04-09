@@ -18,7 +18,7 @@ class SubjectListElement extends StatelessWidget {
             Navigator.pushNamed(context, "/subList", arguments: subject);
             break;
           case ESubjectType.subject:
-            Navigator.pushNamed(context, "/", arguments: subject);
+            Navigator.pushNamed(context, "/post", arguments: subject);
             break;
           default:
             Navigator.pushNamed(context, "/error");

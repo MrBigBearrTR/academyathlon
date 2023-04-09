@@ -64,7 +64,7 @@ class _MainPageState extends State<MainPage> {
                     appBar: AppBar(
                         title: const Text('Academyathlon'),
                         leading: IconButton(
-                          icon: Icon(Icons.menu),
+                          icon: const Icon(Icons.menu),
                           onPressed: () {
                             setState(() {
                               value = 1;
@@ -82,7 +82,7 @@ class _MainPageState extends State<MainPage> {
                               const SizedBox(width: 22),
                               Text(
                                 'Merhaba ${userDetail?.getName() ?? ""} ${userDetail?.getSurname() ?? ""}',
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
                                 ),
