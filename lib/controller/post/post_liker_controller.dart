@@ -1,10 +1,12 @@
+import 'dart:math';
+
 import 'package:academyathlon/data/entity/post/PostLiker.dart';
 
 class PostLikerController{
   static PostLiker postLiker = PostLiker();
 
   int getGeneralLikeCountByUserId(int userId){
-    return 335;
+    return Random().nextInt(500);
   }
 
   bool getLikePostByPostIdAndUserId(int postId,int userId){
@@ -16,7 +18,7 @@ class PostLikerController{
   }
 
   String getLikeCountByPostId(int postId) {
-    return "15";
+    return "${Random().nextInt(120)}";
   }
 
   bool getSavedPostByPostIdAndUserId(int postId,int userId){
