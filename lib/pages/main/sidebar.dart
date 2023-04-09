@@ -9,7 +9,7 @@ class Sidebar extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
-        width: 200.0,
+        width: 230,
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
@@ -19,20 +19,20 @@ class Sidebar extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      /* Navigator.of(context).pushReplacement(MaterialPageRoute(builder:(context) => ProfilePage()),);*/
+                      Navigator.pushNamed(context, "/");
                     },
                     child: const CircleAvatar(
+
                       radius: 50.0,
-                      backgroundImage: NetworkImage(
-                          "https://png.pngtree.com/png-vector/20191101/ourmid/pngtree-cartoon-color-simple-male-avatar-png-image_1934459.jpg"),
+                      backgroundImage: AssetImage("assets/images/profil.png"),
                     ),
                   ),
                   const SizedBox(
                     height: 10.0,
                   ),
                   const Text(
-                    "Enes BOZKURT",
-                    style: TextStyle(color: Colors.white, fontSize: 20.0),
+                    "Akademi Bursiyeri",
+                    style: TextStyle(color: Colors.white, fontSize: 15.0),
                   ),
                 ],
               ),
@@ -47,6 +47,7 @@ class Sidebar extends StatelessWidget {
                   title: const Text('HOME PAGE ',
                       style: TextStyle(color: Colors.white)),
                   onTap: () {
+                    Navigator.pushNamed(context, "/main");
                     /*   Navigator.of(context).pushReplacement(MaterialPageRoute(builder:(context) => HomePage()),);*/
                   },
                 ),
@@ -100,7 +101,7 @@ class Sidebar extends StatelessWidget {
                   title: const Text('ÇIKIŞ YAP',
                       style: TextStyle(color: Colors.white)),
                   onTap: () {
-                    SystemNavigator.pop();
+                    Navigator.of(context).pop();
                   },
                 ),
               ],

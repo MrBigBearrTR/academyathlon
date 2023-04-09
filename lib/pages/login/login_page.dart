@@ -20,7 +20,7 @@ class _LoginState extends State<Login> {
 
     var user = UserController().login(username, password);
     if (user != null) {
-      Navigator.pushReplacementNamed(context, "/sidebar", arguments: user);
+      Navigator.pushReplacementNamed(context, "/main", arguments: user);
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
