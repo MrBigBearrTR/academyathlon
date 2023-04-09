@@ -1,9 +1,7 @@
 import 'package:academyathlon/controller/subject/subject_controller.dart';
 import 'package:academyathlon/controller/user/user_detail_controller.dart';
-import 'package:academyathlon/data/enum/ESubjectType.dart';
 import 'package:academyathlon/pages/main/sidebar.dart';
 import 'package:academyathlon/pages/subjects/subject_list_element.dart';
-import 'package:academyathlon/pages/subjects/subject_list_page.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 
@@ -13,7 +11,6 @@ import '../../data/entity/user/UserDetail.dart';
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
@@ -34,7 +31,7 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
-    User user = ModalRoute.of(context)!.settings.arguments as User;
+    final User user = ModalRoute.of(context)!.settings.arguments as User;
     final UserDetail? userDetail =
         UserDetailController().getUserDetailByUserId(user.getId() ?? 0);
     return Scaffold(
@@ -52,7 +49,7 @@ class _MainPageState extends State<MainPage> {
               ),
             ),
           ),
-          const Sidebar(),
+          Sidebar(user: user),
           TweenAnimationBuilder(
               tween: Tween<double>(begin: 0, end: value),
               duration: const Duration(milliseconds: 500),
@@ -84,7 +81,7 @@ class _MainPageState extends State<MainPage> {
                               Image.asset('assets/images/merhaba.png'),
                               const SizedBox(width: 22),
                               Text(
-                                'Merhaba ${userDetail?.getName() ?? ""}',
+                                'Merhaba ${userDetail?.getName() ?? ""} ${userDetail?.getSurname() ?? ""}',
                                 style: TextStyle(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
@@ -101,8 +98,7 @@ class _MainPageState extends State<MainPage> {
                               final subject = SubjectController()
                                   .getMainSubjectList()[index];
                               return ListTile(
-                                title: SubjectListElement(subject: subject)
-                              );
+                                  title: SubjectListElement(subject: subject));
                             },
                             itemCount:
                                 SubjectController().getMainSubjectList().length,

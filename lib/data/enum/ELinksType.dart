@@ -4,5 +4,6 @@ enum ELinksType{
   instagram,
   twitter,
   youtube,
+  github,
   personelPage;
 }

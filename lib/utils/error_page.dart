@@ -7,8 +7,8 @@ class ErrorPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Error'),backgroundColor: Colors.red,),
-      body: Center(child: Text("404",style: TextStyle(fontSize: 36),),),
+      appBar: AppBar(title: Text('Sayfa Bulunamadı'),backgroundColor: Colors.red,),
+      body: Center(child: Text("Gitmeye çalıştığınız sayfa mevcut değil.",style: TextStyle(fontSize: 36),),),
     );
   }
 }

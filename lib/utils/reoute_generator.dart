@@ -1,5 +1,5 @@
 import 'package:academyathlon/pages/login/login_page.dart';
-import 'package:academyathlon/pages/main/sidebar.dart';
+import 'package:academyathlon/pages/profile/profile_page.dart';
 import 'package:academyathlon/pages/subjects/subject_list_page.dart';
 import 'package:academyathlon/utils/error_page.dart';
 import 'package:flutter/cupertino.dart';
@@ -33,10 +33,10 @@ class RouteGenerator {
     switch (settings.name) {
       case '/main':
         return _createRoute(MainPage(), settings);
-      case '/sidebar':
-        return _createRoute(const Sidebar(), settings);
       case '/subList':
         return _createRoute(const SubjectList(), settings);
+      case '/profile':
+        return _createRoute(const ProfilePage(), settings);
       case '/':
         return _createRoute(const Login(), settings);
       default:

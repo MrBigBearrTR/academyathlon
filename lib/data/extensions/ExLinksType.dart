@@ -23,6 +23,8 @@ extension ExLinksType on ELinksType {
       case ELinksType.personelPage:
         return "Kişisel Sayfa";
 
+      case ELinksType.github:
+        return "GitHub";
     }
   }
 }

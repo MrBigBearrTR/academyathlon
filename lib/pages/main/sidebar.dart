@@ -1,12 +1,21 @@
-import 'package:flutter/cupertino.dart';
+import 'package:academyathlon/controller/user/user_detail_controller.dart';
+import 'package:academyathlon/data/entity/user/User.dart';
+import 'package:academyathlon/data/entity/user/UserDetail.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+
+import '../../controller/subject/subject_controller.dart';
+import '../../data/enum/ESubjectType.dart';
 
 class Sidebar extends StatelessWidget {
-  const Sidebar({Key? key}) : super(key: key);
+  final User? user;
+
+  const Sidebar({Key? key, required this.user}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final UserDetail? userDetail =
+        UserDetailController().getUserDetailByUserId(user?.getId() ?? 0);
+
     return SafeArea(
       child: Container(
         width: 230,
@@ -19,10 +28,9 @@ class Sidebar extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, "/");
+                      Navigator.pushNamed(context, "/profile",arguments: userDetail);
                     },
                     child: const CircleAvatar(
-
                       radius: 50.0,
                       backgroundImage: AssetImage("assets/images/profil.png"),
                     ),
@@ -30,8 +38,8 @@ class Sidebar extends StatelessWidget {
                   const SizedBox(
                     height: 10.0,
                   ),
-                  const Text(
-                    "Akademi Bursiyeri",
+                  Text(
+                    "${userDetail?.getName() ?? ""} ${userDetail?.getSurname() ?? ""}",
                     style: TextStyle(color: Colors.white, fontSize: 15.0),
                   ),
                 ],
@@ -51,7 +59,41 @@ class Sidebar extends StatelessWidget {
                     /*   Navigator.of(context).pushReplacement(MaterialPageRoute(builder:(context) => HomePage()),);*/
                   },
                 ),
-                ListTile(
+                Container(
+                  height: 150,
+                  child: ListView.builder(
+                    itemBuilder: (context, index) {
+                      final subject =
+                          SubjectController().getMainSubjectList()[index];
+                      return ListTile(
+                          leading: const Icon(
+                            Icons.align_horizontal_right,
+                            color: Colors.white,
+                          ),
+                          title: Text(
+                            subject.getName().toString(),
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          onTap: () {
+                            switch (subject.getESubjectType()) {
+                              case ESubjectType.title:
+                                Navigator.pushNamed(context, "/subList",
+                                    arguments: subject);
+                                break;
+                              case ESubjectType.subject:
+                                Navigator.pushNamed(context, "/",
+                                    arguments: subject);
+                                break;
+                              default:
+                                Navigator.pushNamed(context, "/error");
+                                break;
+                            }
+                          });
+                    },
+                    itemCount: SubjectController().getMainSubjectList().length,
+                  ),
+                ),
+                /*ListTile(
                   leading: const Icon(
                     Icons.class_outlined,
                     color: Colors.white,
@@ -92,7 +134,7 @@ class Sidebar extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => SerbestKonularPage()),
                     );*/
                   },
-                ),
+                ),*/
                 ListTile(
                   leading: const Icon(
                     Icons.logout,

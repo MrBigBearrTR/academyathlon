@@ -11,6 +11,8 @@ class UserDetailController {
     userDetail.setSurname("Bursiyeri");
     userDetail.setDescreption(
         "2022 Akademi Bursiyeriyim. Başarılarımın devamını diliyorum.");
+    userDetail.setEmail("bursiyer@gmail.com");
+    userDetail.setPhone("5554445566");
 
     if (userDetail.getId() == userId) {
       return userDetail;
