@@ -33,8 +33,9 @@ class _MainPageState extends State<MainPage> {
             decoration: const BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Colors.blue,
-                  Colors.blueAccent,
+                  Colors.redAccent,
+                  Colors.purple,
+                  Colors.deepPurpleAccent
                 ],
                 begin: Alignment.bottomCenter,
                 end: Alignment.topCenter,
@@ -54,7 +55,21 @@ class _MainPageState extends State<MainPage> {
                     ..rotateY((pi / 6) * val),
                   child: Scaffold(
                     appBar: AppBar(
-                        title: const Text('Academyathlon'),
+                      backgroundColor: Colors.transparent,
+                      flexibleSpace: Container(
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [
+                              Colors.deepPurpleAccent,
+                              Colors.purple,
+                              Colors.pink,
+                            ],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                          ),
+                        ),
+                      ),
+                    title: const Text('Academyathlon'),
                         leading: IconButton(
                           icon: Icon(Icons.menu),
                           onPressed: () {
