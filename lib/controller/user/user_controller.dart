@@ -11,7 +11,6 @@ class UserController {
 
   //UserController().login("username", "password");
   User? login(String username, String password) {
-
     if (username == user.getUsername() && password == user.getPassword()) {
       return user;
     } else {
