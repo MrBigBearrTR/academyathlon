@@ -7,14 +7,14 @@ import '../../controller/subject/subject_controller.dart';
 import '../../data/enum/ESubjectType.dart';
 
 class Sidebar extends StatelessWidget {
-  final User? user;
+  final User user;
 
   const Sidebar({Key? key, required this.user}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final UserDetail? userDetail =
-        UserDetailController().getUserDetailByUserId(user?.getId() ?? 0);
+    final UserDetail userDetail =
+        UserDetailController().getUserDetailByUserId(user.getId() ?? 0);
 
     return SafeArea(
       child: Container(
@@ -40,7 +40,7 @@ class Sidebar extends StatelessWidget {
                     height: 10.0,
                   ),
                   Text(
-                    "${userDetail?.getName() ?? ""} ${userDetail?.getSurname() ?? ""}",
+                    "${userDetail.getName() ?? ""} ${userDetail.getSurname() ?? ""}",
                     style: TextStyle(color: Colors.white, fontSize: 15.0),
                   ),
                 ],
@@ -56,8 +56,7 @@ class Sidebar extends StatelessWidget {
                   title: const Text('HOME PAGE ',
                       style: TextStyle(color: Colors.white)),
                   onTap: () {
-                    Navigator.pushNamed(context, "/main");
-                    /*   Navigator.of(context).pushReplacement(MaterialPageRoute(builder:(context) => HomePage()),);*/
+                   // Navigator.pushNamed(context, "/main",arguments: user);
                   },
                 ),
                 Container(
@@ -93,6 +92,17 @@ class Sidebar extends StatelessWidget {
                     },
                     itemCount: SubjectController().getMainSubjectList().length,
                   ),
+                ),
+                ListTile(
+                  leading: const Icon(
+                    Icons.save,
+                    color: Colors.white,
+                  ),
+                  title: const Text('Kaydettiklerim',
+                      style: TextStyle(color: Colors.white)),
+                  onTap: () {
+                    Navigator.of(context).pushNamed("/postSavedList",arguments: user.getId());
+                  },
                 ),
                 ListTile(
                   leading: const Icon(
