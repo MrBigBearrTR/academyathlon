@@ -1,4 +1,5 @@
 import 'package:academyathlon/controller/post/post_liker_controller.dart';
+import 'package:academyathlon/utils/theme_color_constant.dart';
 import 'package:flutter/material.dart';
 
 import '../../controller/user/user_links_controller.dart';
@@ -13,7 +14,6 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final UserDetail userDetail =
         ModalRoute.of(context)!.settings.arguments as UserDetail;
-
     return Scaffold(
         appBar: AppBar(
           title: const Text('Profil Sayfası'),
@@ -41,28 +41,29 @@ class ProfilePage extends StatelessWidget {
                   style: const TextStyle(
                     fontSize: 22.0,
                     fontWeight: FontWeight.bold,
+                    color: ThemeColorConstant.white,
                   ),
                 ),
                 const Padding(padding: EdgeInsets.fromLTRB(0, 10, 0, 0)),
                 Text(
                   userDetail.getEmail() ?? "E-Mail Bulunamadı",
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 18.0,
-                    color: Colors.grey[600],
+                    color: ThemeColorConstant.gray,
                   ),
                 ),
                 const Padding(padding: EdgeInsets.fromLTRB(0, 10, 0, 0)),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
                     Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Padding(
-                          padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                          padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
                           child: Row(
                             children: <Widget>[
                               Padding(
-                                padding: const EdgeInsets.fromLTRB(0, 0, 0, 5),
+                                padding: const EdgeInsets.fromLTRB(20, 0, 0, 5),
                                 child: Container(
                                   decoration: BoxDecoration(
                                     color: Colors.red,
@@ -75,22 +76,24 @@ class ProfilePage extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              SizedBox(width: 30,),
-                              Text(
-                                userDetail.getPhone() ?? "Telefon Bulunamadı",
-                                style: TextStyle(
-                                  color: Colors.grey[600],
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                                child: Text(
+                                  userDetail.getPhone() ?? "Telefon Bulunamadı",
+                                  style: const TextStyle(
+                                    color: ThemeColorConstant.gray,
+                                  ),
                                 ),
                               ),
                             ],
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                          padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                           child: Row(
                             children: <Widget>[
                               Padding(
-                                padding: const EdgeInsets.fromLTRB(0, 0, 0, 5),
+                                padding: const EdgeInsets.fromLTRB(20, 0, 0, 5),
                                 child: Container(
                                   decoration: BoxDecoration(
                                     color: Colors.yellow,
@@ -103,28 +106,30 @@ class ProfilePage extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              SizedBox(width: 30,),
-                              Text(
-                                UserLinksController()
-                                    .getUserLinksByUserIdAndLinksType(
-                                    userDetail.getUserId() ?? 0,
-                                    ELinksType.github)
-                                    ?.getLink()
-                                    .toString() ??
-                                    "",
-                                style: TextStyle(
-                                  color: Colors.grey[600],
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                                child: Text(
+                                  UserLinksController()
+                                          .getUserLinksByUserIdAndLinksType(
+                                              userDetail.getUserId() ?? 0,
+                                              ELinksType.github)
+                                          ?.getLink()
+                                          .toString() ??
+                                      "",
+                                  style: const TextStyle(
+                                    color: ThemeColorConstant.gray,
+                                  ),
                                 ),
                               ),
                             ],
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                          padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
                           child: Row(
                             children: <Widget>[
                               Padding(
-                                padding: const EdgeInsets.fromLTRB(30, 0, 0, 5),
+                                padding: const EdgeInsets.fromLTRB(20, 0, 0, 5),
                                 child: Container(
                                   decoration: BoxDecoration(
                                     color: Colors.blue,
@@ -137,17 +142,19 @@ class ProfilePage extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              SizedBox(width: 30,),
-                              Text(
-                                UserLinksController()
-                                    .getUserLinksByUserIdAndLinksType(
-                                    userDetail.getUserId() ?? 0,
-                                    ELinksType.linkedin)
-                                    ?.getLink()
-                                    .toString() ??
-                                    "",
-                                style: TextStyle(
-                                  color: Colors.grey[600],
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                                child: Text(
+                                  UserLinksController()
+                                          .getUserLinksByUserIdAndLinksType(
+                                              userDetail.getUserId() ?? 0,
+                                              ELinksType.linkedin)
+                                          ?.getLink()
+                                          .toString() ??
+                                      "",
+                                  style: const TextStyle(
+                                    color: ThemeColorConstant.gray,
+                                  ),
                                 ),
                               ),
                             ],
@@ -178,19 +185,15 @@ class ProfilePage extends StatelessWidget {
                   padding: const EdgeInsets.all(10.0),
                   decoration: BoxDecoration(
                     border: Border.all(
-                      color: Colors.grey,
+                      color: ThemeColorConstant.blue2,
                     ),
                   ),
                   child: Container(
                     padding: const EdgeInsets.all(10.0),
-                    decoration: BoxDecoration(
-                      color: Colors.blue.shade700,
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
                     child: Text(
                       userDetail.getDescreption() ?? "",
                       style: const TextStyle(
-                        fontSize: 22.0,
+                        fontSize: 15.0,
                         fontWeight: FontWeight.normal,
                         color: Colors.white,
                       ),
@@ -202,16 +205,24 @@ class ProfilePage extends StatelessWidget {
                   child: ListView(
                     children: <Widget>[
                       ListTile(
-                        leading: const Icon(Icons.contact_page_outlined, color: Colors.white),
-                        title: const Text('Kaydettiklerim', style: TextStyle(color: Colors.white)),
-                        subtitle: const Text('', style: TextStyle(color: Colors.white)),
-                        onTap: () {},
+                        leading: const Icon(Icons.contact_page_outlined,
+                            color: Colors.white),
+                        title: const Text('Kaydettiklerim',
+                            style: TextStyle(color: Colors.white)),
+                        subtitle: const Text('',
+                            style: TextStyle(color: Colors.white)),
+                        onTap: () {
+                          Navigator.of(context).pushNamed("/postSavedList",arguments: userDetail.getUserId());
+                        },
                       ),
                       ListTile(
-                        leading: const Icon(Icons.gpp_good_rounded, color: Colors.white),
-                        title: const Text('Derecelerim', style: TextStyle(color: Colors.white)),
+                        leading: const Icon(Icons.gpp_good_rounded,
+                            color: Colors.white),
+                        title: const Text('Derecelerim',
+                            style: TextStyle(color: Colors.white)),
                         subtitle: Text(
-                            'Puanım:${PostLikerController().getGeneralLikeCountByUserId(userDetail.getUserId() ?? 0)}', style: TextStyle(color: Colors.white)),
+                            'Puanım:${PostLikerController().getGeneralLikeCountByUserId(userDetail.getUserId() ?? 0)}',
+                            style: const TextStyle(color: Colors.white)),
                       ),
                     ],
                   ),

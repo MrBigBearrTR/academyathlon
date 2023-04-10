@@ -25,15 +25,18 @@ class SubjectList extends StatelessWidget {
           )),
       body: Container(
           decoration: GeneralBackground().getGeneralBackground(),
-          child: ListView.builder(
-            itemBuilder: (context, index) {
-              final subject = SubjectController()
-                  .getSubSubjectListBySubId(mainSubject.getId() ?? 0)[index];
-              return ListTile(title: SubjectListElement(subject: subject));
-            },
-            itemCount: SubjectController()
-                .getSubSubjectListBySubId(mainSubject.getId() ?? 0)
-                .length,
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(0, 30, 0, 0),
+            child: ListView.builder(
+              itemBuilder: (context, index) {
+                final subject = SubjectController()
+                    .getSubSubjectListBySubId(mainSubject.getId() ?? 0)[index];
+                return ListTile(title: SubjectListElement(subject: subject));
+              },
+              itemCount: SubjectController()
+                  .getSubSubjectListBySubId(mainSubject.getId() ?? 0)
+                  .length,
+            ),
           )),
     );
   }
