@@ -37,7 +37,7 @@ class _PostCardState extends State<PostCard> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Colors.white54,
+      color: Colors.black54,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10.0),
       ),
@@ -45,36 +45,71 @@ class _PostCardState extends State<PostCard> {
         children: [
           Column(
             children: [
-              ListTile(
-                leading: const CircleAvatar(
-                  backgroundImage: AssetImage("assets/images/profil.png"),
-                ),
-                title: Text(post.getTitle() ?? ""),
-              ),
-              Image.asset("assets/images/postImage.png"),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  IconButton(
-                    icon: Icon(
-                      _isLiked ? Icons.favorite : Icons.favorite_border,
-                      color: Colors.red,
-                    ),
-                    onPressed: _toggleLike,
+              Padding(
+                padding: const EdgeInsets.fromLTRB(10, 20, 10, 10),
+                child: ListTile(
+                  leading: const CircleAvatar(
+                    backgroundImage: AssetImage("assets/images/profil.png"),
                   ),
-                  Text('$_likeCount'),
-                ],
+                  title: Text(
+                    post.getTitle() ?? "",
+                    style: const TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                  minLeadingWidth: 10,
+                ),
               ),
-              Text(post.getDescreption() ?? ""),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+                child: Text(
+                  post.getDescreption() ?? "",
+                  style: const TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+                child: Image.asset(
+                  "assets/images/postImage.png",
+                  fit: BoxFit.fitWidth,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    IconButton(
+                      icon: Icon(
+                        _isLiked ? Icons.favorite : Icons.favorite_border_sharp,
+                        color: Colors.red.shade800,
+                        size: 30,
+                      ),
+                      onPressed: _toggleLike,
+                    ),
+                    Text(
+                      '$_likeCount',
+                      style: const TextStyle(
+                          fontWeight: FontWeight.w900,
+                          color: Colors.white,
+                          fontSize: 15),
+                    ),
+                  ],
+                ),
+              )
             ],
           ),
           Positioned(
-            bottom: 0.0,
-            right: 8.0,
+            bottom: 20.0,
+            right: 20.0,
             child: IconButton(
               icon: Icon(
                 _isSaved ? Icons.bookmark : Icons.bookmark_border,
-                color: Colors.black87,
+                color: Colors.white,
+                size: 30,
               ),
               onPressed: _toggleSave,
             ),

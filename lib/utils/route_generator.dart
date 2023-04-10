@@ -1,6 +1,7 @@
 import 'package:academyathlon/pages/post/post_card_context_page.dart';
 import 'package:academyathlon/pages/post/post_create_page.dart';
 
+import '../pages/post/post_saved_list_page.dart';
 import '/pages/login/login_page.dart';
 import '/pages/post/post_list_page.dart';
 import '/pages/profile/profile_page.dart';
@@ -45,8 +46,10 @@ class RouteGenerator {
         return _createRoute(const PostListPage(), settings);
       case '/postCardContext':
         return _createRoute(const PostCardContextPage(), settings);
-        case '/postCreate':
+      case '/postCreate':
         return _createRoute(const PostCreatePage(), settings);
+      case '/postSavedList':
+        return _createRoute(const PostSavedListPage(), settings);
       case '/':
         return _createRoute(const Login(), settings);
       default:

@@ -48,8 +48,13 @@ class PostController {
     _postDartList.add(sub33);
   }
 
-  //SubjectController().getMainSubjectList();
+  //PostController().getPostListBySubjectId();
   List<Post> getPostListBySubjectId(int subjectId) {
+    return _postDartList;
+  }
+
+  //PostController().getPostListForMySavedPosts();
+  List<Post> getPostListForMySavedPosts(int userId) {
     return _postDartList;
   }
 }
