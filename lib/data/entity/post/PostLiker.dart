@@ -8,32 +8,32 @@ class PostLiker extends GeneralFields {
   int? _postId;
   ELikerType? _eLikerType;
 
-  int getId() {
-    return _id!;
+  int? getId() {
+    return _id;
   }
 
   void setId(int id) {
     this._id = id;
   }
 
-  int getUserId() {
-    return _userId!;
+  int? getUserId() {
+    return _userId;
   }
 
   void setUserId(int userId) {
     this._userId = userId;
   }
 
-  int getPostId() {
-    return _postId!;
+  int? getPostId() {
+    return _postId;
   }
 
-  void setPostId(int _postId) {
-    this._postId = _postId;
+  void setPostId(int postId) {
+    this._postId = postId;
   }
 
-  ELikerType getELikerType() {
-    return _eLikerType!;
+  ELikerType? getELikerType() {
+    return _eLikerType;
   }
 
   void setELikerType(ELikerType eLikerType) {

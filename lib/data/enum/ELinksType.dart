@@ -1,8 +1,9 @@
 /// @authors MrBigBear
 enum ELinksType{
-  LINKEDLN,
-  INSTAGRAM,
-  TWITTER,
-  YOUTUBE,
-  PERSONEL_PAGE;
+  linkedin,
+  instagram,
+  twitter,
+  youtube,
+  github,
+  personelPage;
 }

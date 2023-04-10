@@ -8,21 +8,23 @@ extension ExLinksType on ELinksType {
 
     switch (this) {
 
-      case ELinksType.LINKEDLN:
-        return "Linkedln";
+      case ELinksType.linkedin:
+        return "LinkedIn";
 
-      case ELinksType.INSTAGRAM:
+      case ELinksType.instagram:
         return "Instagram";
 
-      case ELinksType.TWITTER:
+      case ELinksType.twitter:
         return "Twitter";
 
-      case ELinksType.YOUTUBE:
+      case ELinksType.youtube:
         return "YouTube";
 
-      case ELinksType.PERSONEL_PAGE:
+      case ELinksType.personelPage:
         return "Kişisel Sayfa";
 
+      case ELinksType.github:
+        return "GitHub";
     }
   }
 }
