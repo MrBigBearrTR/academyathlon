@@ -50,10 +50,6 @@ class PostController {
 
   //SubjectController().getMainSubjectList();
   List<Post> getPostListBySubjectId(int subjectId) {
-    if (subjectId == 1) {
-      return _postDartList;
-    } else {
-      return [];
-    }
+    return _postDartList;
   }
 }

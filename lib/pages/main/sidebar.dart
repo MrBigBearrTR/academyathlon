@@ -28,7 +28,8 @@ class Sidebar extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, "/profile",arguments: userDetail);
+                      Navigator.pushNamed(context, "/profile",
+                          arguments: userDetail);
                     },
                     child: const CircleAvatar(
                       radius: 50.0,
@@ -93,48 +94,6 @@ class Sidebar extends StatelessWidget {
                     itemCount: SubjectController().getMainSubjectList().length,
                   ),
                 ),
-                /*ListTile(
-                  leading: const Icon(
-                    Icons.class_outlined,
-                    color: Colors.white,
-                  ),
-                  title: const Text('DERS KONULARI ',
-                      style: TextStyle(color: Colors.white)),
-                  onTap: () {
-                    /* Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => DersKonulariPage()),
-                    );*/
-                  },
-                ),
-                ListTile(
-                  leading: const Icon(
-                    Icons.task,
-                    color: Colors.white,
-                  ),
-                  title: const Text('GÖREV KONULARI ',
-                      style: TextStyle(color: Colors.white)),
-                  onTap: () {
-                    /* Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => GorevKonulariPage()),
-                    );*/
-                  },
-                ),
-                ListTile(
-                  leading: const Icon(
-                    Icons.search,
-                    color: Colors.white,
-                  ),
-                  title: const Text('SERBEST KONULAR  ',
-                      style: TextStyle(color: Colors.white)),
-                  onTap: () {
-                    /*Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => SerbestKonularPage()),
-                    );*/
-                  },
-                ),*/
                 ListTile(
                   leading: const Icon(
                     Icons.logout,
@@ -143,7 +102,7 @@ class Sidebar extends StatelessWidget {
                   title: const Text('ÇIKIŞ YAP',
                       style: TextStyle(color: Colors.white)),
                   onTap: () {
-                    Navigator.of(context).pop();
+                    Navigator.of(context).pushNamed("/");
                   },
                 ),
               ],

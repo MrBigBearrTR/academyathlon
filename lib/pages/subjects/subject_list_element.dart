@@ -1,5 +1,4 @@
 import 'package:academyathlon/data/entity/subject/Subject.dart';
-import 'package:academyathlon/utils/random_color_utils.dart';
 import 'package:flutter/material.dart';
 
 import '../../data/enum/ESubjectType.dart';
@@ -27,7 +26,7 @@ class SubjectListElement extends StatelessWidget {
       },
       style: ElevatedButton.styleFrom(
         minimumSize: const Size(85, 50),
-        backgroundColor: RandomColorUtils.getStaticColor(subject.getId()??0),
+        backgroundColor: const Color(0x4dffffff),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30),
         ),

@@ -6,11 +6,13 @@ import 'package:flutter/material.dart';
 
 class PostCommend extends StatelessWidget {
   final Commend commend;
-  const PostCommend({Key? key,required this.commend}) : super(key: key);
+
+  const PostCommend({Key? key, required this.commend}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    UserDetail? userDetail=UserDetailController().getUserDetailByUserId(commend.getUserId()??0);
+    UserDetail? userDetail =
+        UserDetailController().getUserDetailByUserId(commend.getUserId() ?? 0);
     return Card(
       color: Colors.white54,
       shape: RoundedRectangleBorder(
@@ -24,9 +26,10 @@ class PostCommend extends StatelessWidget {
                 leading: const CircleAvatar(
                   backgroundImage: AssetImage("assets/images/profil.png"),
                 ),
-                title: Text("${userDetail?.getName() ?? ""} ${userDetail?.getSurname() ?? ""}"),
+                title: Text(
+                    "${userDetail?.getName() ?? ""} ${userDetail?.getSurname() ?? ""}"),
               ),
-              Text(commend.getContent()??""),
+              Text(commend.getContent() ?? ""),
             ],
           ),
         ],

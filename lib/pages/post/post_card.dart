@@ -65,10 +65,9 @@ class _PostCardState extends State<PostCard> {
                   Text('$_likeCount'),
                 ],
               ),
-                Text(post.getDescreption() ?? ""),
+              Text(post.getDescreption() ?? ""),
             ],
           ),
-
           Positioned(
             bottom: 0.0,
             right: 8.0,

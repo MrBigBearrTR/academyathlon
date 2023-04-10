@@ -1,12 +1,15 @@
 import 'package:academyathlon/controller/subject/subject_controller.dart';
+import 'package:academyathlon/controller/user/user_controller.dart';
 import 'package:academyathlon/controller/user/user_detail_controller.dart';
 import 'package:academyathlon/pages/main/sidebar.dart';
 import 'package:academyathlon/pages/subjects/subject_list_element.dart';
+import 'package:academyathlon/utils/theme_color_constant.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 
 import '../../data/entity/user/User.dart';
 import '../../data/entity/user/UserDetail.dart';
+import '../../utils/general_background.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -35,20 +38,10 @@ class _MainPageState extends State<MainPage> {
     final UserDetail? userDetail =
         UserDetailController().getUserDetailByUserId(user.getId() ?? 0);
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
-          Container(
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  Colors.blue,
-                  Colors.blueAccent,
-                ],
-                begin: Alignment.bottomCenter,
-                end: Alignment.topCenter,
-              ),
-            ),
-          ),
+          Container(decoration: GeneralBackground().getGeneralMainBackground()),
           Sidebar(user: user),
           TweenAnimationBuilder(
               tween: Tween<double>(begin: 0, end: value),
@@ -62,6 +55,10 @@ class _MainPageState extends State<MainPage> {
                     ..rotateY((pi / 6) * val),
                   child: Scaffold(
                     appBar: AppBar(
+                        backgroundColor: Colors.transparent,
+                        flexibleSpace: Container(
+                            decoration:
+                                GeneralBackground().getGeneralMainBackground()),
                         title: const Text('Academyathlon'),
                         leading: IconButton(
                           icon: const Icon(Icons.menu),
@@ -71,41 +68,60 @@ class _MainPageState extends State<MainPage> {
                             });
                           },
                         )),
-                    body: Column(
-                      children: [
-                        Container(
-                          color: Colors.grey.shade400,
-                          height: 150,
-                          child: Row(
-                            children: [
-                              Image.asset('assets/images/merhaba.png'),
-                              const SizedBox(width: 22),
-                              Text(
-                                'Merhaba ${userDetail?.getName() ?? ""} ${userDetail?.getSurname() ?? ""}',
-                                style: const TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
+                    body: Container(
+                        decoration: GeneralBackground().getGeneralBackground(),
+                        child: Column(
+                          children: [
+                            Container(
+                              decoration: const BoxDecoration(
+                                gradient: LinearGradient(
+                                  colors: [
+                                    ThemeColorConstant.darkBlue6,
+                                    ThemeColorConstant.darkBlue5,
+                                  ],
+                                  begin: Alignment.topLeft,
+                                  end: Alignment.bottomRight,
                                 ),
                               ),
-                            ],
-                          ),
-                        ),
-                        const SizedBox(height: 30),
-                        Container(
-                          height: 200,
-                          child: ListView.builder(
-                            itemBuilder: (context, index) {
-                              final subject = SubjectController()
-                                  .getMainSubjectList()[index];
-                              return ListTile(
-                                  title: SubjectListElement(subject: subject));
-                            },
-                            itemCount:
-                                SubjectController().getMainSubjectList().length,
-                          ),
-                        ),
-                      ],
-                    ),
+                              height: 150,
+                              child: Row(
+                                children: [
+                                  Image.asset('assets/images/merhaba.png'),
+                                  const Padding(
+                                      padding:
+                                          EdgeInsets.fromLTRB(20, 0, 0, 0)),
+                                  Flexible(
+                                    child: Text(
+                                      'Merhaba ${userDetail?.getName() ?? ""} ${userDetail?.getSurname() ?? ""}',
+                                      softWrap: true,
+                                      style: const TextStyle(
+                                        fontSize: 18,
+                                        color: ThemeColorConstant.white,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            const SizedBox(height: 30),
+                            Container(
+                              height: 200,
+                              child: ListView.builder(
+                                itemBuilder: (context, index) {
+                                  final subject = SubjectController()
+                                      .getMainSubjectList()[index];
+                                  return ListTile(
+                                      title:
+                                          SubjectListElement(subject: subject));
+                                },
+                                itemCount: SubjectController()
+                                    .getMainSubjectList()
+                                    .length,
+                              ),
+                            ),
+                          ],
+                        )),
                   ),
                 ));
               }),
