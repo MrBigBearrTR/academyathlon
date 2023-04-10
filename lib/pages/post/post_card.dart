@@ -37,7 +37,7 @@ class _PostCardState extends State<PostCard> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Colors.white54,
+      color: Colors.black54,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10.0),
       ),
@@ -49,32 +49,66 @@ class _PostCardState extends State<PostCard> {
                 leading: const CircleAvatar(
                   backgroundImage: AssetImage("assets/images/profil.png"),
                 ),
-                title: Text(post.getTitle() ?? ""),
+                title:
+                Text(post.getTitle() ?? "",
+                    style:  TextStyle(
+                      color: Colors.white,
+                    ),
+                ),
+
               ),
-              Image.asset("assets/images/postImage.png"),
+              Text(post.getDescreption() ?? "",
+                style:  TextStyle(
+                  fontSize: 20,
+                  color: Colors.white,
+                ),
+
+
+              ),
+
+
+
+              Image.asset("assets/images/postImage.png", width: 6000, height: 200,),
+
+
               Row(
+
                 mainAxisAlignment: MainAxisAlignment.start,
+
+
                 children: [
                   IconButton(
                     icon: Icon(
-                      _isLiked ? Icons.favorite : Icons.favorite_border,
-                      color: Colors.red,
+                      _isLiked ? Icons.favorite : Icons.favorite_border_sharp,
+                      color: Colors.red.shade800,
+                      size: 40,
                     ),
                     onPressed: _toggleLike,
                   ),
-                  Text('$_likeCount'),
+                  Text('$_likeCount' ,
+                    style: TextStyle(
+                        fontWeight:FontWeight.w900,
+                            color : Colors.white,
+                    ),
+                  ),
+
                 ],
               ),
-              Text(post.getDescreption() ?? ""),
+
+
+
+
             ],
           ),
+
           Positioned(
             bottom: 0.0,
             right: 8.0,
             child: IconButton(
               icon: Icon(
                 _isSaved ? Icons.bookmark : Icons.bookmark_border,
-                color: Colors.black87,
+                color: Colors.white,
+                size: 40,
               ),
               onPressed: _toggleSave,
             ),
