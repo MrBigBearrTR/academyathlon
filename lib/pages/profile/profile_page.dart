@@ -9,7 +9,7 @@ import '../../utils/general_background.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({Key? key}) : super(key: key);
-
+//Kullanıcı Profil Sayfası
   @override
   Widget build(BuildContext context) {
     final UserDetail userDetail =
