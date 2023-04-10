@@ -12,17 +12,16 @@ class PostCardContextPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //Post post = ModalRoute.of(context)!.settings.arguments as Post;
-    Post post = PostController().getPostListBySubjectId(1)[1];
+    Post post = ModalRoute.of(context)!.settings.arguments as Post;
     return Scaffold(
         appBar: AppBar(
           title: Text('${post.getTitle()}'),
           backgroundColor: Colors.transparent,
-          flexibleSpace:
-              Container(decoration: GeneralBackground().getGeneralMainBackground()),
+          flexibleSpace: Container(
+              decoration: GeneralBackground().getGeneralMainBackground()),
         ),
         body: Container(
-          height: MediaQuery.of(context).size.height,
+            height: MediaQuery.of(context).size.height,
             decoration: GeneralBackground().getGeneralBackground(),
             child: SingleChildScrollView(
               child: Column(

@@ -15,8 +15,8 @@ class SubjectList extends StatelessWidget {
       appBar: AppBar(
           title: Text(mainSubject.getName() ?? "Academyathlon"),
           backgroundColor: Colors.transparent,
-          flexibleSpace:
-              Container(decoration: GeneralBackground().getGeneralMainBackground()),
+          flexibleSpace: Container(
+              decoration: GeneralBackground().getGeneralMainBackground()),
           leading: IconButton(
             icon: const Icon(Icons.arrow_back),
             onPressed: () {

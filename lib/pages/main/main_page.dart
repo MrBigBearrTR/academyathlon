@@ -34,19 +34,14 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
-    /* final User user = ModalRoute.of(context)!.settings.arguments as User;
+    final User user = ModalRoute.of(context)!.settings.arguments as User;
     final UserDetail? userDetail =
-        UserDetailController().getUserDetailByUserId(user.getId() ?? 0);*/
-    final User? user = UserController().login("1", "1");
-    final UserDetail? userDetail =
-        UserDetailController().getUserDetailByUserId(1);
+        UserDetailController().getUserDetailByUserId(user.getId() ?? 0);
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
-          Container(
-            decoration: GeneralBackground().getGeneralMainBackground()
-          ),
+          Container(decoration: GeneralBackground().getGeneralMainBackground()),
           Sidebar(user: user),
           TweenAnimationBuilder(
               tween: Tween<double>(begin: 0, end: value),
@@ -62,8 +57,8 @@ class _MainPageState extends State<MainPage> {
                     appBar: AppBar(
                         backgroundColor: Colors.transparent,
                         flexibleSpace: Container(
-                          decoration: GeneralBackground().getGeneralMainBackground()
-                        ),
+                            decoration:
+                                GeneralBackground().getGeneralMainBackground()),
                         title: const Text('Academyathlon'),
                         leading: IconButton(
                           icon: const Icon(Icons.menu),

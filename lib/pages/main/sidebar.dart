@@ -28,7 +28,8 @@ class Sidebar extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, "/profile",arguments: userDetail);
+                      Navigator.pushNamed(context, "/profile",
+                          arguments: userDetail);
                     },
                     child: const CircleAvatar(
                       radius: 50.0,

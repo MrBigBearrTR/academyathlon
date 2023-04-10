@@ -64,7 +64,8 @@ class _LoginState extends State<Login> {
                       // resmin arka rengi
                       //color: Colors.white,
                       borderRadius: BorderRadius.circular(110),
-                      border: Border.all(color: ThemeColorConstant.purple, width: 1),
+                      border: Border.all(
+                          color: ThemeColorConstant.purple, width: 1),
                     ),
                     child: const Image(
                       image:
@@ -75,7 +76,7 @@ class _LoginState extends State<Login> {
                 Container(
                   margin: const EdgeInsets.only(top: 30),
                   child: GradientText(
-                    "Akademyathlon",
+                    "Academyathlon",
                     style: GoogleFonts.aBeeZee(
                       fontWeight: FontWeight.w600,
                       fontSize: 30,

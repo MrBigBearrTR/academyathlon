@@ -15,8 +15,8 @@ class PostListPage extends StatelessWidget {
         appBar: AppBar(
           title: Text('${mainSubject.getName()}'),
           backgroundColor: Colors.transparent,
-          flexibleSpace:
-              Container(decoration: GeneralBackground().getGeneralMainBackground()),
+          flexibleSpace: Container(
+              decoration: GeneralBackground().getGeneralMainBackground()),
         ),
         body: Container(
             decoration: GeneralBackground().getGeneralBackground(),
@@ -35,6 +35,13 @@ class PostListPage extends StatelessWidget {
               itemCount: PostController()
                   .getPostListBySubjectId(mainSubject.getId() ?? 0)
                   .length,
-            )));
+            )),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.pushNamed(context, "/postCreate", arguments: mainSubject);
+          },
+          tooltip: 'Create Post',
+          child: Icon(Icons.add),
+        ));
   }
 }
