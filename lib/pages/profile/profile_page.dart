@@ -53,82 +53,104 @@ class ProfilePage extends StatelessWidget {
                 ),
                 const Padding(padding: EdgeInsets.fromLTRB(0, 10, 0, 0)),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
                     Column(
                       children: <Widget>[
-                        Container(
-                          decoration: BoxDecoration(
-                            color: Colors.red,
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: IconButton(
-                            icon: const Icon(Icons.phone),
-                            color: Colors.white,
-                            onPressed: () {},
-                          ),
-                        ),
-                        const Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 0)),
-                        Text(
-                          userDetail.getPhone() ?? "Telefon Bulunamadı",
-                          style: TextStyle(
-                            color: Colors.grey[600],
-                          ),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      children: <Widget>[
-                        Container(
-                          decoration: BoxDecoration(
-                            color: Colors.yellow,
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: IconButton(
-                            icon: const Icon(Icons.link),
-                            color: Colors.white,
-                            onPressed: () {},
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                          child: Row(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(0, 0, 0, 5),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.red,
+                                    borderRadius: BorderRadius.circular(10.0),
+                                  ),
+                                  child: IconButton(
+                                    icon: const Icon(Icons.phone),
+                                    color: Colors.white,
+                                    onPressed: () {},
+                                  ),
+                                ),
+                              ),
+                              SizedBox(width: 30,),
+                              Text(
+                                userDetail.getPhone() ?? "Telefon Bulunamadı",
+                                style: TextStyle(
+                                  color: Colors.grey[600],
+                                ),
+                              ),
+                            ],
                           ),
                         ),
-                        const Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 0)),
-                        Text(
-                          UserLinksController()
-                                  .getUserLinksByUserIdAndLinksType(
-                                      userDetail.getUserId() ?? 0,
-                                      ELinksType.github)
-                                  ?.getLink()
-                                  .toString() ??
-                              "",
-                          style: TextStyle(
-                            color: Colors.grey[600],
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                          child: Row(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(0, 0, 0, 5),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.yellow,
+                                    borderRadius: BorderRadius.circular(10.0),
+                                  ),
+                                  child: IconButton(
+                                    icon: const Icon(Icons.link),
+                                    color: Colors.white,
+                                    onPressed: () {},
+                                  ),
+                                ),
+                              ),
+                              SizedBox(width: 30,),
+                              Text(
+                                UserLinksController()
+                                    .getUserLinksByUserIdAndLinksType(
+                                    userDetail.getUserId() ?? 0,
+                                    ELinksType.github)
+                                    ?.getLink()
+                                    .toString() ??
+                                    "",
+                                style: TextStyle(
+                                  color: Colors.grey[600],
+                                ),
+                              ),
+                            ],
                           ),
                         ),
-                      ],
-                    ),
-                    Column(
-                      children: <Widget>[
-                        Container(
-                          decoration: BoxDecoration(
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: IconButton(
-                            icon: const Icon(Icons.work),
-                            color: Colors.white,
-                            onPressed: () {},
-                          ),
-                        ),
-                        const Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 0)),
-                        Text(
-                          UserLinksController()
-                                  .getUserLinksByUserIdAndLinksType(
-                                      userDetail.getUserId() ?? 0,
-                                      ELinksType.linkedin)
-                                  ?.getLink()
-                                  .toString() ??
-                              "",
-                          style: TextStyle(
-                            color: Colors.grey[600],
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                          child: Row(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(30, 0, 0, 5),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.blue,
+                                    borderRadius: BorderRadius.circular(10.0),
+                                  ),
+                                  child: IconButton(
+                                    icon: const Icon(Icons.work),
+                                    color: Colors.white,
+                                    onPressed: () {},
+                                  ),
+                                ),
+                              ),
+                              SizedBox(width: 30,),
+                              Text(
+                                UserLinksController()
+                                    .getUserLinksByUserIdAndLinksType(
+                                    userDetail.getUserId() ?? 0,
+                                    ELinksType.linkedin)
+                                    ?.getLink()
+                                    .toString() ??
+                                    "",
+                                style: TextStyle(
+                                  color: Colors.grey[600],
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ],
@@ -137,7 +159,7 @@ class ProfilePage extends StatelessWidget {
                 ),
                 const Padding(padding: EdgeInsets.fromLTRB(0, 30, 0, 0)),
                 Container(
-                  color: Colors.red,
+                  color: Colors.transparent,
                   width: double.infinity,
                   padding: const EdgeInsets.all(10.0),
                   child: const Text(
@@ -162,7 +184,7 @@ class ProfilePage extends StatelessWidget {
                   child: Container(
                     padding: const EdgeInsets.all(10.0),
                     decoration: BoxDecoration(
-                      color: Colors.blue,
+                      color: Colors.blue.shade700,
                       borderRadius: BorderRadius.circular(10.0),
                     ),
                     child: Text(
@@ -180,16 +202,16 @@ class ProfilePage extends StatelessWidget {
                   child: ListView(
                     children: <Widget>[
                       ListTile(
-                        leading: const Icon(Icons.contact_page_outlined),
-                        title: const Text('Kaydettiklerim'),
-                        subtitle: const Text(''),
+                        leading: const Icon(Icons.contact_page_outlined, color: Colors.white),
+                        title: const Text('Kaydettiklerim', style: TextStyle(color: Colors.white)),
+                        subtitle: const Text('', style: TextStyle(color: Colors.white)),
                         onTap: () {},
                       ),
                       ListTile(
-                        leading: const Icon(Icons.gpp_good_rounded),
-                        title: const Text('Derecelerim'),
+                        leading: const Icon(Icons.gpp_good_rounded, color: Colors.white),
+                        title: const Text('Derecelerim', style: TextStyle(color: Colors.white)),
                         subtitle: Text(
-                            'Puanım:${PostLikerController().getGeneralLikeCountByUserId(userDetail.getUserId() ?? 0)}'),
+                            'Puanım:${PostLikerController().getGeneralLikeCountByUserId(userDetail.getUserId() ?? 0)}', style: TextStyle(color: Colors.white)),
                       ),
                     ],
                   ),
