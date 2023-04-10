@@ -5,11 +5,11 @@ class UserController {
 
   UserController() {
     user.setId(1);
-    user.setUsername('1');
-    user.setPassword('1');
+    user.setUsername('bursiyer@gmail.com');
+    user.setPassword('bursiyer1');
   }
 
-  //UserController().isUserSaved("username", "password");
+  //UserController().login("username", "password");
   User? login(String username, String password) {
 
     if (username == user.getUsername() && password == user.getPassword()) {
