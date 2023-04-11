@@ -1,4 +1,4 @@
-# academyathlon
+# Academyathlon
 
 Assignment platform for academic development
 
@@ -9,15 +9,8 @@ Pull request ile soldan sağa doğru merge'lenerek işlem çalışan hali ile li
 Bireysel Branchiniz >> test >> live >> master
 
 
-## Getting Started
+## Uygulama Amacı
 
-This project is a starting point for a Flutter application.
+Tüm bursiyerlerin ortak sorunu videoları izliyoruz fakat uygulama anlamında eksik kalıyoruz. Etkinliğe katılmadan da uygulamaları da yapmamız gerektiğini hatırlayamıyoruz.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Bu uygulama bu soruna bir çözüm olarak. Akademi tarafından tanımlanmış konu başlıkları altında Dersler ile alakalı, ara ara verilen uygulama çalışmaları veya bursiyerlerin kendi aralarında yaptıkları uygulamaları paylaşabileceği bir platform oluşturmak istiyoruz.
